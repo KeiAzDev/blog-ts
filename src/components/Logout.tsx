@@ -2,11 +2,11 @@ import { signInWithPopup, signOut } from "firebase/auth"
 import { auth, provider } from "../firebase"
 import { useNavigate } from "react-router-dom";
 
-interface LoginProps {
+interface LogoutProps {
   setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Logout: React.FC<LoginProps> = ({ setIsAuth }) => {
+const Logout: React.FC<LogoutProps> = ({ setIsAuth }) => {
   const navigate = useNavigate();
   const logout = () => {
     signOut(auth).then(() => {
