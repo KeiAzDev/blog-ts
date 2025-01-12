@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/Home.css";
 import { collection, deleteDoc, Firestore, getDocs, doc } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 
 interface Author {
   id: string;
@@ -59,7 +59,9 @@ const Home: React.FC = () => {
             <div className="postTextContainer">{post.postText}</div>
             <div className="nameAndDeleteButton">
               <h3>@{post.author.username}</h3>
-              <button onClick={() => handleDelete(post.id)}>削除</button>
+              {post.author.id === auth.currentUser?.uid && (
+                <button onClick={() => handleDelete(post.id)}>削除</button>
+              )}
             </div>
           </div>
         );
