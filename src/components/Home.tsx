@@ -1,4 +1,4 @@
-
+import "./styles/Home.css";
 
 const Home = () => {
   return (
@@ -7,16 +7,16 @@ const Home = () => {
         <div className="postHeader">
           <h1>タイトル</h1>
         </div>
-      </div>
-      <div className="postTextContainer">
-        a;lsjfklasjglkjdal;kdjgl;akjsldkjaflkdjklafjlksdjflkasjlkdgoihqeoigjhlakjfdlksjalfjd
-      </div>
-      <div className="nameAndDeleteButton">
-        <h3>@keiazdev</h3>
-        <button>削除</button>
+        <div className="postTextContainer">
+          a;lsjfklasjglkjdal;kdjgl;akjsldkjaflkdjklafjlksdjflkasjlkdgoihqeoigjhlakjfdlksjalfjdfasdfasdfasdfasdfdasfd
+        </div>
+        <div className="nameAndDeleteButton">
+          <h3>@keiazdev</h3>
+          <button>削除</button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
