@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/Home.css";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, Firestore, getDocs, doc } from "firebase/firestore";
 import { db } from "../firebase";
 
 interface Author {
@@ -43,6 +43,11 @@ const Home: React.FC = () => {
     getPosts();
   }, []);
 
+  const handleDelete = async(id: string) => {
+    await deleteDoc(doc(db, 'posts', id));
+    window.location.href = '/';
+  };
+
   return (
     <div className="homePage">
       {postList.map((post) => {
@@ -54,7 +59,7 @@ const Home: React.FC = () => {
             <div className="postTextContainer">{post.postText}</div>
             <div className="nameAndDeleteButton">
               <h3>@{post.author.username}</h3>
-              <button>削除</button>
+              <button onClick={() => handleDelete(post.id)}>削除</button>
             </div>
           </div>
         );
