@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/Home.css";
-import { collection, deleteDoc, Firestore, getDocs, doc } from "firebase/firestore";
+import { collection, deleteDoc, getDocs, doc } from "firebase/firestore";
 import { auth, db } from "../firebase";
 
 interface Author {
